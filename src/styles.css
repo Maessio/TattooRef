@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%; /* Ensure the full height of the viewport */
+    margin: 0;
+    background-color: #1f2937;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh;
+  }
+
+  
