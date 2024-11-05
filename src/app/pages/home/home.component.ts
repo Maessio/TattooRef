@@ -19,15 +19,20 @@ export class HomeComponent {
   private service = inject(ApiService); 
   
   getImage(prompt: string){
-    this.service.get(prompt).subscribe({
-      next: (res) => {
-        console.log(res.image);
-        this.image = res.image
+    if(prompt.trim() !== '') {
+      this.service.get(prompt).subscribe({
+        next: (res) => {
+          console.log(res.image);
+          this.image = res.image
+  
+        }, error: (er) => {
+          console.log("GONE BAD: ", er)
+        } 
+  
+      }).add(() => {
+        // implement warn to insert a prompt != ''
+      });
+    }
 
-      }, error: (er) => {
-        console.log("GONE BAD: ", er)
-      } 
-
-    })
   }
 }
