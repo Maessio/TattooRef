@@ -33,6 +33,5 @@ export class HomeComponent {
         // implement warn to insert a prompt != ''
       });
     }
-
   }
 }
